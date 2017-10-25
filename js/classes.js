@@ -60,3 +60,42 @@ class Shouter extends Speaker{
 }
 
 new Shouter("Dr. Loudmouth").speak("hello there"); //Dr. Loudmouth shouts 'HELLO THERE'
+
+/*
+ ---------------------------------------------------------------------------------------------
+ */
+console.log('------------st task3');
+/*
+ Task#3 Getters
+
+ The way the verb property is set per instance rather than per class is kind of awkward.
+ Refactor the code to use a getter (get verb() { ... }) instead of an instance property.
+ */
+
+class Speaker3{
+    constructor(name, verb="says"){
+        this.name = name;
+        this._verb = verb;
+    }
+
+    speak(text){
+        console.log(`${this.name} ${this.verb} '${text}'`);
+    }
+
+    get verb(){ //added getter
+        return this._verb;
+    }
+}
+
+class Shouter3 extends Speaker3{
+    constructor(name){
+        super(name, "shouts");
+    }
+
+    speak(text){
+        super.speak(text.toUpperCase());
+    }
+}
+
+new Shouter3("Dr. Loudmouth").speak("hello there");
+console.log(new Shouter3("Dr. Loudmouth").verb);
