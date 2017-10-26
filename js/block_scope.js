@@ -34,3 +34,41 @@ callbacks_es6[2]();
 /*
  ---------------------------------------------------------------------------------------------
  */
+
+console.log('------------st task8');
+/*
+ Task#8 Constant non-constance
+
+ Does the fact that account is constant mean that we can't update password?
+ Why, or why not? And if not, how could we make it so that we can't?
+ */
+
+
+// 1й способ
+const account = Object.freeze({ //объект становится эффективно неизменным. Метод возвращает замороженный объект.
+    username: "marijn",
+    password: "xyzzy"
+});
+
+account.password = "s3cret"; // (*much* more secure)
+
+console.log(account.password); //=> xyzzy
+
+//2й способ
+const user = {
+    username: "marijn"
+};
+
+Object.defineProperty(user, "password", {
+    value: "xyzzy",
+    writable: false, // запретить присвоение "user.password="
+    configurable: false // запретить удаление "delete user.password"
+});
+
+user.password = "s3cret"; // (*much* more secure)
+
+console.log(user.password); //=> xyzzy
+
+/*
+ ---------------------------------------------------------------------------------------------
+ */
