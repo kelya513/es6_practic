@@ -72,3 +72,23 @@ console.log(user.password); //=> xyzzy
 /*
  ---------------------------------------------------------------------------------------------
  */
+
+console.log('------------st task9');
+/*
+ Task#9 Hoist the class
+
+ This code produces an error. So apparently, unlike functions, classes are not hoisted to the top of their scope.
+ (They are block-scoped.)
+
+ What could be the reason for this?
+ */
+
+/*
+ Разница между объявлением функции (function declaration) и объявлением класса (class declaration) в том,
+ что объявление функции совершает подъём (hoisted), в то время как объявление класса — нет (not hoisted).
+ Поэтому вначале необходимо объявить ваш класс и только затем работать с ним
+ */
+class Something {}
+
+let s = new Something(); //=>not error
+console.log(s);
