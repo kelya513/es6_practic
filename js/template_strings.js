@@ -22,6 +22,38 @@ ${people.filter((ele)=> ele.role == 'senior').length} of them have a senior role
 
 console.log(message);
 
+/*
+ ---------------------------------------------------------------------------------------------
+ */
+
+console.log('------------st task18');
+/*
+ Task#18 Template strings
+
+ Write a function html that can be used as a template string tag, and produces a string in which all the interpolated pieces are escaped as HTML.
+ Use the supplied escapeHTML function to do the escaping.
+
+ Remember that a tag function gets an array of in-between strings as its first argument, and then the interpolated values as further arguments.
+ */
+
+function html(strings, ...values) {
+    let str = "";
+    for(let i=0; i<values.length; i++) {
+        str += strings[i];
+        str += escapeHTML(values[i]);
+    }
+
+    str += strings[strings.length-1];
+    return str;
+}
+
+const mustEscape = '<>&"';
+console.log(html`You should escape the ${mustEscape.length} characters “${mustEscape}” in HTML`);
+
+function escapeHTML(string) {
+    return String(string).replace(/"/g, "&quot;").replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;").replace(/&/g, "&amp;")
+}
 
 
 /*
