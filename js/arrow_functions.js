@@ -14,7 +14,7 @@ const inventory = [
     {type:   "machine", value:   77}
 ];
 
-let totalMachineValue = inventory.reduce((sum,a)=> sum +=a.value , 0);
+let totalMachineValue = inventory.reduce((sum,a)=> sum + a.value , 0);
 
 console.log(totalMachineValue);
 
@@ -69,7 +69,7 @@ console.log("array:", sorted.content);
  */
 console.log('------------st task12');
 /*
- Task#11 Precedence
+ Task#12 Precedence
 
  Where does an arrow function end? At a closing bracket or semicolon, of course.
  But does a comma denote the end? Is the body of the function in this example x + y, 0, or just x + y?
