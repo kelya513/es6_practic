@@ -99,3 +99,8 @@ class Shouter3 extends Speaker3{
 
 new Shouter3("Dr. Loudmouth").speak("hello there");
 console.log(new Shouter3("Dr. Loudmouth").verb);
+
+
+/*
+ ---------------------------------------------------------------------------------------------
+ */
