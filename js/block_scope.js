@@ -13,7 +13,7 @@ console.log('------------st task7');
 //ES5
 var callbacks_es5 = [];
 for (var i = 0; i < 10; i++) {
-    (function (i) { //обернут в скобки, чтобы интерпретатор понял, что это Function Expression => замыкание
+    (function (i) { //обернут в скобки, чтобы интерпретатор понял, что это Function Expression
         callbacks_es5.push(function () {
             console.log(i)
         })
