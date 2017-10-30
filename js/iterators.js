@@ -134,7 +134,7 @@ class List2 {
     static fromM(obj){
 
         let newObj, arr;
-        if (this.isIterable(obj)){
+        if (obj.length > 0){//if (this.isIterable(obj)){
             arr = Array.isArray(obj) ? obj : obj.split('');
             arr.reverse();
             newObj = new List2(arr[0], null);
